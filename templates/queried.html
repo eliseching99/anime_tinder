@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flask Tutorial</title>
+    <link rel='stylesheet' href='static/css/styles.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Anime Tinder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about">About</a>
+            </li>
+            
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0" method="POST">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='text'>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <div class="container" style='text-align:center'>
+        <div class="card hovercard">
+           <img src="{{data['image']}}" alt=""/>
+           <!-- <div class="avatar">
+              <img src="http://placehold.it/80X80/333333/&text=Head" alt="" />
+           </div> -->
+           <div class="info">
+              <div class="title">
+              {{data}}
+              </div>
+              <!-- <div class="desc">Genre: {{data['genre']}}</div>
+              <div class="desc">Type: {{data['type']}}</div>
+              <div class="desc">Episodes: {{data['episodes']}}</div>              
+              <div class="desc">Ratings: {{data['ratings']}}</div> -->
+
+
+           </div>
+           <div class="bottom">
+              <button class="btn btn-default">Button</button>
+           </div>
+        </div>
+    </div>
+
+    <!-- <h1> Remix </h1>
+    <p>Name: {{data['name']}}</p>
+    <p>Genre: {{data['genre']}}</p>
+    <p>Type: {{data['type']}}</p>
+    <p>Episodes: {{data['episodes']}}</p> -->
+
+   
+        
+
+
+
+    {% endblock %}
+  </body>
+</html>
